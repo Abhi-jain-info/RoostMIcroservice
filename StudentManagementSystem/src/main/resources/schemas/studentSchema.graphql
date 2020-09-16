@@ -1,0 +1,69 @@
+type Student{
+    studentId  :ID
+    studentName:String
+    fatherName :String
+    address :String
+    branch :String
+    tenth :Float
+    twelth :Float,
+    dob:String
+    year:Int
+    currentSem:Int
+    marks:Marks
+}
+type Marks{
+    rollNo: String
+    sem1: Int
+    sem2: Int
+    sem3: Int
+    sem4: Int
+    sem5: Int
+    sem6: Int
+    sem7: Int
+    sem8: Int
+}
+
+type Query{
+    allStudent:[Student]
+    allStudentMarks:[Marks]
+    studentByName(studentName: String):[Student]
+    studentByYear(year: Int):[Student]
+    studentByBranch(branch: String):[Student]
+    studentByYearNBranch(branch: String, year: Int):[Student]
+    studentById(studentId: String):Student
+    studentByRollNo(rollNo: String):Student
+}
+
+type Mutation{
+    createStudent(studentData:StudentInput):Student
+    updateStudent(studentData:StudentInput):Student
+    deleteById(studentId:String):Student
+    deleteByRollNo(rollNo:String):Student
+    addMark(studentMarks: MarksInput):Marks
+    generateRollNo(branch: String, year: Int):Int
+    promoteStudents(branch: String, year: Int):Int
+}
+
+input StudentInput{
+    studentId  :ID
+    studentName:String
+    fatherName :String
+    address :String
+    branch :String
+    tenth :Float
+    twelth :Float
+    dob :String
+}
+
+input MarksInput{
+    rollNo: String
+    sem1: Int
+    sem2: Int
+    sem3: Int
+    sem4: Int
+    sem5: Int
+    sem6: Int
+    sem7: Int
+    sem8: Int
+}
+
