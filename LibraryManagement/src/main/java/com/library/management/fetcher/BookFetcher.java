@@ -16,10 +16,33 @@ public class BookFetcher {
     @Autowired
     BookService bookService;
 
+    @Autowired
+    ObjectMapper mapper;
+
+    public DataFetcher<List<Book>> findAll() {
+        return dataFetchingEnvironment -> bookService.findAll();
+    }
+
+    public DataFetcher<List<Book>> findAllAvailableBook() {
+        return dataFetchingEnvironment -> bookService.findBookAvailable();
+    }
+
+    public DataFetcher<Book> findBookById() {
+        return dataFetchingEnvironment -> {
+            String bookId = dataFetchingEnvironment.getArgument("bookId");
+            return bookService.findBookById(bookId);
+        };
+    }
+    public DataFetcher<Book> findBookByBookName() {
+        return dataFetchingEnvironment -> {
+            String bookName = dataFetchingEnvironment.getArgument("bookName");
+            return bookService.findBookByName(bookName);
+        };
+    }
+
 
     public DataFetcher<Book> save() {
         return dataFetchingEnvironment -> {
-            ObjectMapper mapper = new ObjectMapper();
             Book book=mapper.convertValue(dataFetchingEnvironment.getArgument("book"),Book.class);
             return bookService.addBook(book);
         };
@@ -27,7 +50,6 @@ public class BookFetcher {
 
     public DataFetcher<Book> update() {
         return dataFetchingEnvironment -> {
-            ObjectMapper mapper = new ObjectMapper();
             Book student=mapper.convertValue(dataFetchingEnvironment.getArgument("book"),Book.class);
             return bookService.updateBook(student);
         };
@@ -38,10 +60,6 @@ public class BookFetcher {
             String bookId = dataFetchingEnvironment.getArgument("bookId");
             return bookService.deleteBook(bookId);
         };
-    }
-
-    public DataFetcher<List<Book>> findAll() {
-        return dataFetchingEnvironment -> bookService.findAll();
     }
 
     public DataFetcher<String> borrowBook() {

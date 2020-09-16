@@ -9,6 +9,12 @@ public interface BookService {
 
     List<Book> findAll();
 
+    List<Book> findBookAvailable();
+
+    Book findBookById(String id);
+
+    Book findBookByName(String bookName);
+
     Book addBook(Book book);
 
     Book updateBook(Book book);

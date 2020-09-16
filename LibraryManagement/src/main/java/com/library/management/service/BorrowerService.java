@@ -53,6 +53,7 @@ public class BorrowerService {
                     .bodyValue(query)
                     .retrieve()
                     .bodyToMono(LinkedHashMap.class);
+
             LinkedHashMap res = (LinkedHashMap) response.block().get("data");
             LinkedHashMap data = (LinkedHashMap) res.get("studentById");
             this.studentId = (String) data.get("studentId");

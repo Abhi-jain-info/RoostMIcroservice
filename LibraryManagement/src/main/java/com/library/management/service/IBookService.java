@@ -4,6 +4,7 @@ import com.library.management.exception.GraphQLErrorHandler;
 import com.library.management.interfaces.BookService;
 import com.library.management.model.Book;
 import com.library.management.repository.BookRepository;
+import com.library.management.validator.BookValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,9 @@ import static java.time.temporal.ChronoUnit.DAYS;
 public class IBookService implements BookService {
 
     @Autowired
+    BookValidation bookValidation;
+
+    @Autowired
     BookRepository bookRepository;
 
     @Autowired
@@ -32,18 +36,44 @@ public class IBookService implements BookService {
     }
 
     @Override
+    public List<Book> findBookAvailable() {
+        return bookRepository.findAvailableBook();
+    }
+
+    @Override
+    public Book findBookById(String id) {
+        bookExist(id);
+        return bookRepository.getOne(id);
+    }
+
+    @Override
+    public Book findBookByName(String bookName) {
+        if(bookName == null || bookName.isEmpty()){
+            throw new GraphQLErrorHandler("Book Name cannot be Empty");
+        }
+        return bookRepository.findBookByBookName(bookName);
+    }
+
+    @Override
     public Book addBook(Book book) {
+        if(bookRepository.existsById(book.getBookId())){
+            throw new GraphQLErrorHandler("Entity Already exist");
+        }
+        bookValidation.validate(book);
         book.setStudentId("available");
         return bookRepository.save(book);
     }
 
     @Override
     public Book updateBook(Book book) {
+        bookExist(book.getBookId());
+        bookValidation.validate(book);
         return bookRepository.save(book);
     }
 
     @Override
     public Book deleteBook(String bookId) {
+        bookExist(bookId);
         bookRepository.deleteById(bookId);
         return null;
     }
@@ -100,4 +130,11 @@ public class IBookService implements BookService {
         }
         return book;
     }
+
+    private void bookExist(String bookId){
+        if(bookId == null || !bookRepository.existsById(bookId)){
+            throw new GraphQLErrorHandler("Entity does not exist");
+        }
+    }
+
 }

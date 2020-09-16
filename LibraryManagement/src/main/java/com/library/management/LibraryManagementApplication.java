@@ -1,5 +1,6 @@
 package com.library.management;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.library.management.service.BorrowerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +26,8 @@ public class LibraryManagementApplication {
 	}
 
 
+	@Bean
+    public ObjectMapper getObjectMapper(){ return new ObjectMapper(); }
 
 	@Bean
 	@LoadBalanced
@@ -37,6 +40,9 @@ public class LibraryManagementApplication {
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
+
+
+
 	/**
 	 * code to be executed just after services started
 	 * you can test service method here by direct calling
