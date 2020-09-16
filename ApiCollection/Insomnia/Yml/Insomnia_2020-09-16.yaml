@@ -1,0 +1,815 @@
+_type: export
+__export_format: 4
+__export_date: 2020-09-16T13:30:27.475Z
+__export_source: insomnia.desktop.app:v2020.2.2
+resources:
+  - _id: req_d668500b0f3a4e14bb3288fbc8c4b0c7
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\n  promoteStudents(year:1,branch:\"\")\n}"}'
+    created: 1599292866403
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291630567.75
+    method: POST
+    modified: 1599292920760
+    name: promoteStudent
+    parameters: []
+    parentId: fld_f8b20b631509461496b1ae784b2430e6
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: fld_f8b20b631509461496b1ae784b2430e6
+    created: 1599292824186
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599292824186
+    modified: 1599292824186
+    name: Auto
+    parentId: fld_9936d3c085984d808031f89b158839f8
+    _type: request_group
+  - _id: fld_9936d3c085984d808031f89b158839f8
+    created: 1599291581630
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291581630
+    modified: 1599293001133
+    name: Student
+    parentId: fld_ff45968640f949d5b7a7895c12251fe6
+    _type: request_group
+  - _id: fld_ff45968640f949d5b7a7895c12251fe6
+    created: 1599291570451
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291570451
+    modified: 1599291570451
+    name: SMS
+    parentId: wrk_1b4e694fa6ff46d78d7a8308701a8581
+    _type: request_group
+  - _id: wrk_1b4e694fa6ff46d78d7a8308701a8581
+    created: 1599145038150
+    description: ""
+    modified: 1599145038150
+    name: Insomnia
+    parentId: null
+    scope: null
+    _type: workspace
+  - _id: req_e11cd97f63da4d08846d582d2fce4977
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\n  generateRollNo(year:1,branch:\"\")\n}"}'
+    created: 1599292945134
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291628146.125
+    method: POST
+    modified: 1600081271299
+    name: generateRollNo
+    parameters: []
+    parentId: fld_f8b20b631509461496b1ae784b2430e6
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: req_b732e0752d94440d89e400a9bf8c9bb4
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\n  createStudent(studentData:{\n    studentId:\"s1\"\n    studentName:\"Abhinav
+        Jain\"\n    fatherName:\"RK Jain\"\n    address:\"Ward 12
+        Chirawa\"\n    branch:\"cs\"\n    tenth:76\n    twelth:87\n    dob:\"3/5/4444\"\n  }){\n    studentId
+        \n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599292266656
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291635411
+    method: POST
+    modified: 1600081262419
+    name: createStudent
+    parameters: []
+    parentId: fld_6f83d44ce416474f89533aa9bdf2e36d
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: fld_6f83d44ce416474f89533aa9bdf2e36d
+    created: 1599291600737
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291635436
+    modified: 1599292243827
+    name: create
+    parentId: fld_9936d3c085984d808031f89b158839f8
+    _type: request_group
+  - _id: req_5456271a939b48b2a88a01194addc13b
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\n  updateStudent(studentData:{\n    studentId:\"s1\"\n    studentName:\"Abhinav
+        Jain\"\n    branch:\"me\"\n  }){\n    studentId
+        \n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599292554588
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291625724.5
+    method: POST
+    modified: 1599292638810
+    name: updateStudent
+    parameters: []
+    parentId: fld_6b4d1e1b7990447fae3e4349b753e064
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: fld_6b4d1e1b7990447fae3e4349b753e064
+    created: 1599291635386
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291635386
+    modified: 1599291635386
+    name: update
+    parentId: fld_9936d3c085984d808031f89b158839f8
+    _type: request_group
+  - _id: req_ffafa210535e47ddb68a3df1c6041f54
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  allStudent{\n    studentId\n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599291847389
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291616038
+    method: POST
+    modified: 1600262236310
+    name: allStudent
+    parameters: []
+    parentId: fld_7908494d608d4dd4a8a172acd0e0820f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: fld_7908494d608d4dd4a8a172acd0e0820f
+    created: 1599291628552
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291628552
+    modified: 1599291628552
+    name: findBook
+    parentId: fld_9936d3c085984d808031f89b158839f8
+    _type: request_group
+  - _id: req_7474616996c745a8a7ec40215bcac7b5
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  allStudentMarks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    \n  }\n}"}'
+    created: 1599292129861
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291616013
+    method: POST
+    modified: 1600262216764
+    name: allStudentMarks
+    parameters: []
+    parentId: fld_7908494d608d4dd4a8a172acd0e0820f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: req_8403307df22644e6a2bdb94476b45c57
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  studentByName(studentName:\"\"){\n    studentId\n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599291615988
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291615988
+    method: POST
+    modified: 1600262221078
+    name: studentByName
+    parameters: []
+    parentId: fld_7908494d608d4dd4a8a172acd0e0820f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: req_5f81fbad1ca74325a24f0021a2f735c1
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  studentByYear(year:1){\n    studentId\n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599292038876
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291615975.5
+    method: POST
+    modified: 1599292158853
+    name: studentByYear
+    parameters: []
+    parentId: fld_7908494d608d4dd4a8a172acd0e0820f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: req_043b119967af49948cad46cc2fb04d1c
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  studentByBranch(branch:\"\"){\n    studentId\n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599292075735
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291615969.25
+    method: POST
+    modified: 1599292162334
+    name: studentByBranch
+    parameters: []
+    parentId: fld_7908494d608d4dd4a8a172acd0e0820f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: req_4678890bc5ba42569484f26de984a5dd
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  studentByYearNBranch(branch:\"\",year:1){\n    studentId\n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599292175954
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291615966.125
+    method: POST
+    modified: 1599292202945
+    name: studentByBranchNYear
+    parameters: []
+    parentId: fld_7908494d608d4dd4a8a172acd0e0820f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: req_c9a789a04d35409a8371c7322bf578bf
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  studentById(studentId:\"s1\"){\n    studentId\n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599291936809
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291615963
+    method: POST
+    modified: 1600262241259
+    name: studentById
+    parameters: []
+    parentId: fld_7908494d608d4dd4a8a172acd0e0820f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: req_d2af7bd3fe5f456a8b81ef6600effc7f
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  studentByRollNo(rollNo:\"\"){\n    studentId\n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599291999117
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291615950.5
+    method: POST
+    modified: 1599292011665
+    name: studentByRollNo
+    parameters: []
+    parentId: fld_7908494d608d4dd4a8a172acd0e0820f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: req_723d66b46e544b7a91ba13a872c1d0fe
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\n  deleteById(studentId:\"s1\"){\n    studentId
+        \n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599292691223
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291620881.25
+    method: POST
+    modified: 1599292739636
+    name: deleteById
+    parameters: []
+    parentId: fld_fc2d51189df4470e877fef66f11f1f0f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: fld_fc2d51189df4470e877fef66f11f1f0f
+    created: 1599291608452
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291608452
+    modified: 1599291608452
+    name: delete
+    parentId: fld_9936d3c085984d808031f89b158839f8
+    _type: request_group
+  - _id: req_a2e0d07de2344efdb6ee51372371af79
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\n  deleteByRollNo(rollNo:\"s1\"){\n    studentId
+        \n    studentName\n    fatherName\n    address\n    branch\n    tenth\n    twelth\n    dob\n    year\n    currentSem\n    marks{\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n  }\n}"}'
+    created: 1599292746580
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291618459.625
+    method: POST
+    modified: 1599292766464
+    name: deleteByRollNo
+    parameters: []
+    parentId: fld_fc2d51189df4470e877fef66f11f1f0f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: req_4e945155060246c5a63d60f24c91cbf0
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\n  addMark(studentMarks:{\n    rollNo:\"\"\n    sem1:1\n  }){\n      rollNo\n      sem1\n      sem2\n      sem3\n      sem4\n      sem5\n      sem6\n      sem7\n      sem8\n    }\n}"}'
+    created: 1599292970549
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291632989.375
+    method: POST
+    modified: 1599293269471
+    name: addMarks
+    parameters: []
+    parentId: fld_435b7bf01cac484693434a537abb2bd8
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8081/graphql
+    _type: request
+  - _id: fld_435b7bf01cac484693434a537abb2bd8
+    created: 1599291576132
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291576132
+    modified: 1599293015210
+    name: Marks
+    parentId: fld_ff45968640f949d5b7a7895c12251fe6
+    _type: request_group
+  - _id: req_31fd789e5a804cbcbfe591bea43a7a00
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\ncreateBook(book:{\n  bookId:\"b6\"\n  bookName:\"Half
+        girlfriend\"\n  bookGenre:\"Fantasy\"\n  publication:\"HP\"\n  authorName:\"chetan
+        bhagat\"\n  price:9999\n  pages:5669\n}){\n  bookId\n  bookName\n  genre\n  publication\n  price\n  pages\n  authorName\n  studentId\n  studentName\n}\n}"}'
+    created: 1600088103518
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291635411
+    method: POST
+    modified: 1600262931981
+    name: createStudent
+    parameters: []
+    parentId: fld_bba6a425bdab4f6ea115984428a1004d
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8082/graphql
+    _type: request
+  - _id: fld_bba6a425bdab4f6ea115984428a1004d
+    created: 1600088103516
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1600100287355
+    modified: 1600261059039
+    name: create
+    parentId: fld_8034edfa68414669bff9867715011dcf
+    _type: request_group
+  - _id: fld_8034edfa68414669bff9867715011dcf
+    created: 1600088103514
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291581630
+    modified: 1600088120259
+    name: Liberary
+    parentId: fld_5df71493ba7f4f7c89c0629b95cc20ef
+    _type: request_group
+  - _id: fld_5df71493ba7f4f7c89c0629b95cc20ef
+    created: 1600088103458
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1597917153600.5
+    modified: 1600088103458
+    name: LMS
+    parentId: wrk_1b4e694fa6ff46d78d7a8308701a8581
+    _type: request_group
+  - _id: req_0a5e12d29fbb4786b8eefb6fa55237bc
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\nborrowBook(borrow:{\n  bookId:[\"b2\",\"b3\"]\n  studentId:\"s1\"\n})\n}"}'
+    created: 1600100501189
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291634805.5938
+    method: POST
+    modified: 1600262932647
+    name: borrowBook
+    parameters: []
+    parentId: fld_bba6a425bdab4f6ea115984428a1004d
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8082/graphql
+    _type: request
+  - _id: req_1db6d4654e19449bbf5687ec8c37e4d0
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\nreturnBook(bookId:[\"b2\",\"b3\"])\n}"}'
+    created: 1600100593897
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291634502.8906
+    method: POST
+    modified: 1600262917362
+    name: returnBook
+    parameters: []
+    parentId: fld_bba6a425bdab4f6ea115984428a1004d
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8082/graphql
+    _type: request
+  - _id: req_7bf2e1614bdd4220b87df5775079a3e3
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  allBook{\n  bookId\n  bookName\n  genre\n  publication\n  price\n  pages\n  authorName\n  studentId\n  studentName\n  }\n}"}'
+    created: 1600100301372
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291634200.1875
+    method: POST
+    modified: 1600262923139
+    name: findAll
+    parameters: []
+    parentId: fld_3754adb38ec2413e9624fbe1be5db5bf
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8082/graphql
+    _type: request
+  - _id: fld_3754adb38ec2413e9624fbe1be5db5bf
+    created: 1600100287305
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1600100287305
+    modified: 1600100287305
+    name: Find
+    parentId: fld_8034edfa68414669bff9867715011dcf
+    _type: request_group
+  - _id: req_56c9859f3e3a43568ae2cbf4f23c8865
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  allBookAvailable{\n  bookId\n  bookName\n  genre\n  publication\n  price\n  pages\n  authorName\n  studentId\n  studentName\n  }\n}"}'
+    created: 1600261015057
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291633594.7812
+    method: POST
+    modified: 1600262957947
+    name: findAllAvailable
+    parameters: []
+    parentId: fld_3754adb38ec2413e9624fbe1be5db5bf
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8082/graphql
+    _type: request
+  - _id: req_c3310c38c58a48eea864350034d01ce8
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  bookById(bookId:\"b2\"){\n  bookId\n  bookName\n  genre\n  publication\n  price\n  pages\n  authorName\n  studentId\n  studentName\n  }\n}"}'
+    created: 1600261071604
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291633292.0781
+    method: POST
+    modified: 1600262966458
+    name: findById
+    parameters: []
+    parentId: fld_3754adb38ec2413e9624fbe1be5db5bf
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8082/graphql
+    _type: request
+  - _id: req_9459fe9580644095b2ef82a5c61a0a4a
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  bookByName(bookName:\"Half
+        girlfriend\"){\n  bookId\n  bookName\n  genre\n  publication\n  price\n  pages\n  authorName\n  studentId\n  studentName\n  }\n}"}'
+    created: 1600261283928
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291633140.7266
+    method: POST
+    modified: 1600262874835
+    name: findByName
+    parameters: []
+    parentId: fld_3754adb38ec2413e9624fbe1be5db5bf
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8082/graphql
+    _type: request
+  - _id: req_09a9a314864249268b9e7b0eaa916d4e
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\nupdateBook(book:{\n  bookId:\"b5\"\n  bookName:\"Harry
+        Potter\"\n  bookGenre:\"Fantasy\"\n  publication:\"HP\"\n  authorName:\"JK
+        Rowling\"\n  price:999\n  pages:566\n}){\n  bookId\n  bookName\n  genre\n  publication\n  price\n  pages\n  authorName\n}\n}"}'
+    created: 1600088103543
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291625724.5
+    method: POST
+    modified: 1600261003406
+    name: updateStudent
+    parameters: []
+    parentId: fld_252ba645dd6142d1b1800331c42bdcb2
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8082/graphql
+    _type: request
+  - _id: fld_252ba645dd6142d1b1800331c42bdcb2
+    created: 1600088103542
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291635386
+    modified: 1600088103542
+    name: update
+    parentId: fld_8034edfa68414669bff9867715011dcf
+    _type: request_group
+  - _id: req_50066cf62e6f446c99871856c7e11b52
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation{\ndeleteBook(bookId:\"b\"){\n  bookId\n  bookName\n  genre\n  publication\n  price\n  pages\n  authorName\n}\n}"}'
+    created: 1600100425993
+    description: ""
+    headers:
+      - id: pair_2387d53ca6734fc9a92bf41f10dd2da3
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1599291608402
+    method: POST
+    modified: 1600259502916
+    name: delete
+    parameters: []
+    parentId: fld_b00837767d3a4d67910830f66885860d
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingFollowRedirects: global
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:8082/graphql
+    _type: request
+  - _id: fld_b00837767d3a4d67910830f66885860d
+    created: 1600088103521
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1599291608452
+    modified: 1600088103521
+    name: delete
+    parentId: fld_8034edfa68414669bff9867715011dcf
+    _type: request_group
+  - _id: env_a0abe14a7220cf4e1a70170c57b2e3b900714267
+    color: null
+    created: 1599145038218
+    data: {}
+    dataPropertyOrder: null
+    isPrivate: false
+    metaSortKey: 1599145038218
+    modified: 1599145038218
+    name: Base Environment
+    parentId: wrk_1b4e694fa6ff46d78d7a8308701a8581
+    _type: environment
+  - _id: jar_a0abe14a7220cf4e1a70170c57b2e3b900714267
+    cookies: []
+    created: 1599145038223
+    modified: 1599145038223
+    name: Default Jar
+    parentId: wrk_1b4e694fa6ff46d78d7a8308701a8581
+    _type: cookie_jar
+  - _id: spc_48bf6598e1fa4556a749fb7ec77cb73e
+    contentType: yaml
+    contents: ""
+    created: 1599145038152
+    fileName: Insomnia
+    modified: 1599145038152
+    parentId: wrk_1b4e694fa6ff46d78d7a8308701a8581
+    _type: api_spec

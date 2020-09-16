@@ -1,5 +1,5 @@
 type Book{
-    bookId: ID
+    bookId: ID!
     bookName: String
     price: Int
     pages: Int
@@ -16,6 +16,9 @@ input Borrower{
 
 type Query{
     allBook:[Book]
+    allBookAvailable:[Book]
+    bookById(bookId:String):Book
+    bookByName(bookName:String):Book
 }
 
 type Mutation{
