@@ -1,0 +1,37 @@
+type Book{
+    bookId: ID
+    bookName: String
+    price: Int
+    pages: Int
+    publication: String
+    authorName: String
+    genre: String
+    studentId: String
+    studentName: String
+}
+input Borrower{
+   bookId: [String]
+   studentId: String
+}
+
+type Query{
+    allBook:[Book]
+}
+
+type Mutation{
+   createBook(book:BookData):Book
+   updateBook(book:BookData):Book
+   deleteBook(bookId:String):Book
+   borrowBook(borrow:Borrower):String
+   returnBook(bookId:[String]):String
+}
+
+input BookData{
+    bookId: ID
+    bookName: String
+    price: Int
+    pages: Int
+    publication: String
+    authorName: String
+    bookGenre: String
+}
